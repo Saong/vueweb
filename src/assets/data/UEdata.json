@@ -1,0 +1,12 @@
+[{
+    "domidx": 123,
+    "Name": "G-001",
+    "NodeType": "3",
+    "lat": 39,
+    "lon": 116,
+    "alt": 0,
+    "Mobility": "Fixed",
+    "TBD1": "NaN",
+    "TBD2": "NaN",
+    "TBD3": "NaN"
+}]
