@@ -5,8 +5,8 @@
 				<el-menu :default-active="defaultActive" style="min-height: 100%;" 
 				background-color="#545c64"   text-color="#fff"
   active-text-color="#ffd04b" router>
-					<el-menu-item index="manage"><i class="el-icon-menu"></i>首页</el-menu-item>
-					<el-submenu index="2">
+					
+					<el-submenu index="1">
 						<template slot="title"><i class="el-icon-document"></i>目标系统</template>
 						
 						<el-menu-item index="SATList">卫星</el-menu-item>
@@ -17,8 +17,9 @@
 						<el-menu-item index="ParaSimuList">仿真</el-menu-item>
 						
 					</el-submenu>
-					<el-menu-item index="manage"><i class="el-icon-data-line"></i>图表展示</el-menu-item>
-				<el-button  plain type="primary"  size="small" style="position:absolute;left:30px;bottom:10px">性能评估</el-button>
+					<el-menu-item index="manage"><i class="el-icon-menu"></i>图表展示</el-menu-item>
+					
+				<el-button  plain type="primary"  size="small" style="position:absolute;left:30px;bottom:10px" @click="jumpTo">性能评估</el-button>
 				</el-menu>
 			</el-col>
 			<el-col :span="22" style="height: 100%;overflow: auto;">
@@ -37,6 +38,11 @@
 				return this.$route.path.replace('/', '');
 			}
 		},
+		methods: {
+			jumpTo: function(){
+				window.open('http://124.16.138.10:8080/Apps/earth3.html','_blank')
+			}
+		}
     }
 </script>
 

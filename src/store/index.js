@@ -9,7 +9,7 @@ const state = {
         avatar: 'default.jpg'
     },
     GSPara: 123,
-    ws: new WebSocket("ws://10.0.0.104:7181")
+    ws: new WebSocket("ws://124.16.138.10:23896/files")
 
 }
 
@@ -34,7 +34,7 @@ const actions = {
     }
 }
 state.ws.onopen = function() {
-    console.log("成功连接到ws://10.0.0.104:7181");
+    console.log("ws://124.16.138.10:23896/files");
 }
 
 export default new Vuex.Store({
