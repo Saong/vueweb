@@ -6,12 +6,14 @@
 
 		</section>
 		<tendency :sevenDate='sevenDate' :sevenDay='sevenDay'></tendency>
+		<chart></chart>
     </div>
 </template>
 
 <script>
 	import headTop from '../components/headTop'
 	import tendency from '../components/tendency' 
+	import chart from '../components/dataChart' 
 	import dtime from 'time-formater'
 	import {userCount, orderCount, getUserCount, getOrderCount, adminDayCount, adminCount} from '@/api/getData'
     export default {
@@ -30,6 +32,7 @@
     	components: {
     		headTop,
     		tendency,
+			chart
     	},
     	mounted(){
     		this.initData();

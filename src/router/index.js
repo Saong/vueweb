@@ -14,10 +14,23 @@ const SATList = r => require.ensure([], () => r(require('@/page/SATList')), 'SAT
 const GSList = r => require.ensure([], () => r(require('@/page/GSList')), 'GSList');
 const UEList = r => require.ensure([], () => r(require('@/page/UEList')), 'UEList');
 const LnkList = r => require.ensure([], () => r(require('@/page/LnkList')), 'LnkList');
+
 const TrafficList = r => require.ensure([], () => r(require('@/page/TrafficList')), 'TrafficList');
 const ParaSimuList = r => require.ensure([], () => r(require('@/page/ParaSimuList')), 'ParaSimuList');
 const orderList = r => require.ensure([], () => r(require('@/page/orderList')), 'orderList');
 const adminList = r => require.ensure([], () => r(require('@/page/adminList')), 'adminList');
+
+const PathDelayChart = r => require.ensure([], () => r(require('@/page/PathDelayChart')), 'PathDelayChart');
+const PathHopChart = r => require.ensure([], () => r(require('@/page/PathHopChart')), 'PathHopChart');
+const SpeedChart = r => require.ensure([], () => r(require('@/page/SpeedChart')), 'SpeedChart');
+const NetworkChart = r => require.ensure([], () => r(require('@/page/NetworkChart')), 'NetworkChart');
+const TerminalChart = r => require.ensure([], () => r(require('@/page/TerminalChart')), 'TerminalChart');
+const StationChart = r => require.ensure([], () => r(require('@/page/StationChart')), 'StationChart');
+const UserLinkChart = r => require.ensure([], () => r(require('@/page/UserLinkChart')), 'UserLinkChart');
+const FeedLinkChart = r => require.ensure([], () => r(require('@/page/FeedLinkChart')), 'FeedLinkChart');
+
+
+
 const visitor = r => require.ensure([], () => r(require('@/page/visitor')), 'visitor');
 const newMember = r => require.ensure([], () => r(require('@/page/newMember')), 'newMember');
 const uploadImg = r => require.ensure([], () => r(require('@/page/uploadImg')), 'uploadImg');
@@ -79,41 +92,39 @@ const routes = [{
             component: ParaSimuList,
             meta: ['目标系统', '仿真'],
         }, {
-            path: '/orderList',
-            component: orderList,
-            meta: ['数据管理', '订单列表'],
+            path: '/PathDelayChart',
+            component: PathDelayChart,
+            meta: ['图表展示', '时延'],
         }, {
-            path: '/adminList',
-            component: adminList,
-            meta: ['数据管理', '管理员列表'],
+            path: '/PathHopChart',
+            component: PathHopChart,
+            meta: ['图表展示', '跳数'],
+
         }, {
-            path: '/visitor',
-            component: visitor,
-            meta: ['图表', '用户分布'],
+            path: '/SpeedChart',
+            component: SpeedChart,
+            meta: ['图表展示', '跳数'],
+
         }, {
-            path: '/newMember',
-            component: newMember,
-            meta: ['图表', '用户数据'],
+            path: '/NetworkChart',
+            component: NetworkChart,
+            meta: ['图表展示', '跳数'],
         }, {
-            path: '/uploadImg',
-            component: uploadImg,
-            meta: ['文本编辑', 'MarkDown'],
+            path: '/TerminalChart',
+            component: TerminalChart,
+            meta: ['图表展示', '跳数'],
         }, {
-            path: '/vueEdit',
-            component: vueEdit,
-            meta: ['编辑', '文本编辑'],
+            path: '/StationChart',
+            component: StationChart,
+            meta: ['图表展示', '跳数'],
         }, {
-            path: '/adminSet',
-            component: adminSet,
-            meta: ['设置', '管理员设置'],
+            path: '/FeedLinkChart',
+            component: FeedLinkChart,
+            meta: ['图表展示', '跳数'],
         }, {
-            path: '/sendMessage',
-            component: sendMessage,
-            meta: ['设置', '发送通知'],
-        }, {
-            path: '/explain',
-            component: explain,
-            meta: ['说明', '说明'],
+            path: '/UserLinkChart',
+            component: UserLinkChart,
+            meta: ['图表展示', '跳数'],
         }]
     }
 ]
