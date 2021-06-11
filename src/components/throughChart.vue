@@ -78,7 +78,7 @@
                         bottom: 20,
                     },
                     grid: {
-                        left: '2%',
+                        left: '4%',
                         right: '5%',
                         bottom: '3%',
                         containLabel: true
@@ -229,16 +229,21 @@
                         that.leftOption.series[i*2].data.push(parseInt(data[that.dataPos[0]][i]));
                         that.leftOption.series[i*2+1].data.push(parseInt(data[that.dataPos[1]][i]));
                     }
-                    that.leftOption.xAxis.data=that.xAxisData(that.leftOption);
+                    that.leftOption.xAxis.data=that.xAxisData(that.leftOption,'left');
                 })
 
             },
             prefixZero(num, n) {
                 return (Array(n).join(0) + num).slice(-n);
             },
-            xAxisData(option){
+            xAxisData(option, position){
+                position = position || 'right';
                 return option.series[0].data.map(function (item,i) {
-                    return i;
+                    if(position=='left')
+                        return i;
+                    else{
+                        return i+1;
+                    }
                 });
             },
             computeData(nums){
